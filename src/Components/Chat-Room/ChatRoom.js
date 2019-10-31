@@ -1,16 +1,17 @@
 import React, {Component} from 'react';
 import Header from '../Header/Header'
 
-class Tracker extends Component {
+
+class ChatRoom extends Component {
 
     render(){
         return(
             <div>
                 <Header />
-                Tracker
+                ChatRoom
             </div>
         )
     }
 }
 
-export default Tracker;
+export default ChatRoom;
