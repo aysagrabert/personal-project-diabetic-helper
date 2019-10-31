@@ -21,8 +21,14 @@ app.use(session({
     }
 }))
 
-//endpoints
+//Endpoints
+//authController endpoints
 
+
+//trackerController
+
+
+//chatRoomController
 
 
 const port = SERVER_PORT;
