@@ -8,6 +8,10 @@ class DoctorRegistration extends Component {
         return(
             <div>
                 DoctorRegistration
+                <input placeholder='Username'/>
+                <input placeholder='Password'/>
+                <input placeholder='First Name'/>
+                <input placeholder='Last Name'/>
                 <Link to='/patients'><button>Register</button></Link>
             </div>
         )
