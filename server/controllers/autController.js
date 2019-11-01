@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 
 module.exports = {
     doctorRegister: async(req, res) => {
-        const{username, password} = req.body;
+        const{username, password, firstName, lastName} = req.body;
         const db = req.app.get('db');
         const{session} = req;
         // console.log(req.body)
@@ -14,7 +14,7 @@ module.exports = {
 
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
-        let newUser = await db.register_user(true, username, hash, null);
+        let newUser = await db.register_user(true, username, hash, null, firstName, lastName);
         newUser = newUser[0];
 
         session.user = newUser;
@@ -23,7 +23,7 @@ module.exports = {
     },
 
     patientRegister: async(req, res) => {
-        const{username, password, doctor} = req.body;
+        const{username, password, doctor, firstName, lastName} = req.body;
         const db = req.app.get('db');
         const{session} = req;
 
@@ -36,7 +36,7 @@ module.exports = {
 
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
-        let newUser = await db.register_user(false, username, hash, doctor);
+        let newUser = await db.register_user(false, username, hash, doctor, firstName, lastName);
         newUser = newUser[0];
 
         
@@ -56,15 +56,31 @@ module.exports = {
         user = user [0];
         if(!user){
             return req.status(400).send('User not found');
-        }else
-    },
+        }else {
+            let foundUser = bcrypt.compareSync(password, user.password);
 
-    getUser: (req, res) => {
-
+            if(foundUser){
+                delete user.password;
+                session.user = user;
+                console.log(session.user)
+                return res.status(202).send(session.user);
+            }else{
+                return res.status(400).send('Incorrect Password');
+            }
+        }
     },
 
     logout: (req,res) => {
-        // req.session.destroy()
-        // res.sendStatus(200)
+        req.session.destroy()
+        res.sendStatus(200)
+    },
+
+    getUser: (req, res) => {
+        const {user} = req.session;
+        if(user){
+            res.status(200).send(user)
+        }else{
+            res.status(500).send('user not on session')
+        }
     }
 }

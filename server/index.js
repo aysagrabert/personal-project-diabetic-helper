@@ -33,8 +33,8 @@ const authCtrl = require('./controllers/autController')
 app.post('/api/doctorRegister', authCtrl.doctorRegister);
 app.post('/api/patientRegister', authCtrl.patientRegister);
 app.post('/api/login', authCtrl.login);
-// app.post('/api/logout', authCtrl.logout);
-// app.post('/api/user', authCtrl.getUser);
+app.post('/api/logout', authCtrl.logout);
+app.post('/api/user', authCtrl.getUser);
 
 //trackerController
 
