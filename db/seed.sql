@@ -17,6 +17,9 @@ values
 (false, 'Keith Moore', '5555', 'Dr.Davis'),
 (false, 'Hope Vega', '6666', 'Dr.Davis')
 
+select *
+from users
+
 --tracker
 --carbs
 --blood sugar
