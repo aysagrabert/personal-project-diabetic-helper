@@ -30,11 +30,11 @@ const authCtrl = require('./controllers/autController')
 
 //Endpoints
 //authController endpoints
-app.post('/api/doctorRegister', authCtrl.doctorRegister);
-app.post('/api/patientRegister', authCtrl.patientRegister);
-app.post('/api/login', authCtrl.login);
-app.post('/api/logout', authCtrl.logout);
-app.post('/api/user', authCtrl.getUser);
+app.post('/auth/doctorRegister', authCtrl.doctorRegister);
+app.post('/auth/patientRegister', authCtrl.patientRegister);
+app.post('/auth/login', authCtrl.login);
+app.post('/auth/logout', authCtrl.logout);
+app.post('/auth/user', authCtrl.getUser);
 
 //trackerController
 
