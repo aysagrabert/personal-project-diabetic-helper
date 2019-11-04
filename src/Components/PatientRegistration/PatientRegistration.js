@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import './PatientRegistration.css';
 
 
 class PatientRegistration extends Component {
@@ -42,46 +43,59 @@ class PatientRegistration extends Component {
 
     render(){
         return(
-            <div>
-                PatientRegistration
-                <input 
-                    placeholder='Username'
-                    value={this.state.username}
-                    name='username'
-                    onChange={(e) => this.handleInput(e)}/>
+            <div className='patient-registration-behind'>
+                <section className='patient-registration-container'>
+                Patient Registration
+                    <p>Username:</p>
+                    <input
+                        value={this.state.username}
+                        name='username'
+                        onChange={(e) => this.handleInput(e)}/>
 
-                <input 
-                    placeholder='Password'
-                    type='password'
-                    value={this.state.password}
-                    name='password'
-                    onChange={(e) => this.handleInput(e)}/>
+                    <p>Password:</p>
 
-                <input 
-                    placeholder='First Name'
-                    value={this.state.firstName}
-                    name='firstName'
-                    onChange={(e) => this.handleInput(e)}
-                    />
+                    <input 
+                        placeholder='Password'
+                        type='password'
+                        value={this.state.password}
+                        name='password'
+                        onChange={(e) => this.handleInput(e)}/>
 
-                <input 
-                    placeholder='Last Name'
-                    value={this.state.lastName}
-                    name='lastName'
-                    onChange={(e) => this.handleInput(e)}
-                    />  
+                    <p>First Name:</p>    
 
-                <input 
-                    placeholder='Doctor'
-                    value={this.state.doctor}
-                    name='doctor'
-                    onChange={(e) => this.handleInput(e)}/>
+                    <input 
+                        placeholder='First Name'
+                        value={this.state.firstName}
+                        name='firstName'
+                        onChange={(e) => this.handleInput(e)}
+                        />
 
-                <Link to='/doctor-registration'><button>Doctor Registration</button></Link>
+                    <p>Last Name:</p>    
 
-                <button onClick={this.handlePatientRegister}>Register</button>
-                
-                <Link to='/login'><button>Sign In</button></Link>
+                    <input 
+                        placeholder='Last Name'
+                        value={this.state.lastName}
+                        name='lastName'
+                        onChange={(e) => this.handleInput(e)}
+                        />  
+
+                    <p>Doctor:</p>    
+
+                    <input 
+                        placeholder='Doctor'
+                        value={this.state.doctor}
+                        name='doctor'
+                        onChange={(e) => this.handleInput(e)}/>
+                      
+
+                    <Link to='/doctor-registration'><button>Doctor Registration</button></Link>
+
+                    <article className='register-button-container'>
+                        <button onClick={this.handlePatientRegister}>Register</button>
+                        
+                        <Link to='/login'><button>Sign In</button></Link>
+                    </article>
+                </section>     
 
             </div>
         )

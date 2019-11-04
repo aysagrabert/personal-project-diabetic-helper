@@ -1,0 +1,81 @@
+
+.behind-login{
+    height: 90vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: stretch;
+    
+}
+
+.login-container{
+    height: 40vh;
+    width: 30vw;
+    border: 1px solid black;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+}
+
+.input-container{
+    height: 10vh;
+    width: 20vw;
+    border: 1px solid blue;
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; */
+
+	/* display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+	align-content: stretch; */
+}
+
+.username-input {
+    height: 5vh;
+    width: 20vw;
+    /* border: 1px solid pink; */
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.password-input {
+    height: 5vh;
+    width: 20vw;
+    /* border: 1px solid purple; */
+    display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-register{
+    height: 5vh;
+    width: 20vw;
+    border: 1px solid red;
+
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	align-items: center;
+	align-content: stretch;
+}
+
+.login-register-button{
+    height: 30px;
+    border: 0px;
+    background-color: gray;
+    font-size: 15px;
+    font-family: 'PT Serif', serif;
+
+
+}

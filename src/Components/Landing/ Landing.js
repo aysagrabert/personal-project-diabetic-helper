@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import './Landing.css'
 
 //redux
 // import {connect} from 'react-redux';
@@ -40,31 +41,55 @@ class Landing extends Component {
 
     render(){
         return(
-            <div className='login-container'>
-                Login
-                <section className='input-container'>
+            <article className='behind-login'>
+                <div className='login-container'>
+                     Login
+                    <section                                className='input-container'>
+                    <div className='username-input'>
+                        <style>
+                            @import url('https://fonts.googleapis.com/css?family=PT+Serif&display=swap');
+                        </style>
 
-                <input 
-                    placeholder='Username'
-                    value={this.state.username}
-                    name='username'
-                    onChange={(e) => this.handleInput(e)}/>
+                            <p>Username:</p>
+                            
 
-                <input 
-                    placeholder='Password'
-                    type='password'
-                    value={this.state.password}
-                    name='password'
-                    onChange={(e) => this.handleInput(e)}/>
-    
-                </section>
+                        <input 
+                            // placeholder='Username'
+                            value={this.state.username}
+                            name='username'
+                            onChange={(e) => this.handleInput(e)}/>
+                    </div>        
+                
+                <div className='password-input'>
 
-                <article>
-                    <button onClick={this.handleLogin}>Login</button>
+                    <style>
+                        @import url('https://fonts.googleapis.com/css?family=PT+Serif&display=swap');
+                    </style>
 
-                    <Link to='/patient-registration'><button>Register</button></Link>
-                </article>
-            </div>
+                    <p>Password:</p>
+
+                    <input 
+                        // placeholder='Password'
+                        type='password'
+                        value={this.state.password}
+                        name='password'
+                        onChange={(e) => this.handleInput(e)}/>
+                </div>        
+        
+                    </section>
+
+                    <article className='login-register'>
+                    <style>
+                        @import url('https://fonts.googleapis.com/css?family=PT+Serif&display=swap');
+                    </style>
+
+                        <button onClick={this.handleLogin} className='login-register-button'>Login</button>
+
+
+                        <Link to='/patient-registration'><button className='login-register-button'>Register</button></Link>
+                    </article>
+                </div>
+            </article>
         )
     }
 }

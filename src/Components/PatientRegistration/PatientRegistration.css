@@ -1,0 +1,30 @@
+.patient-registration-behind {
+    height: 90vh;
+    display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: center;
+    align-content: stretch;
+}
+
+.patient-registration-container{
+    height: 70vh;
+    width: 30vw;
+    border: 1px solid black;
+    display: flex;
+	justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'PT Serif', serif;
+    font-size: 20px;
+}
+
+
+
+
+.register-button-container{
+    
+}
+
+
