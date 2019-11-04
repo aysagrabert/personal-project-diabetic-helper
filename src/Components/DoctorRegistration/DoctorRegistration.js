@@ -19,6 +19,8 @@ class DoctorRegistration extends Component {
             lastName: ''
         }
     }
+    componentDidMount(){
+    }
 
     handleInput = (e) => {
         this.setState({
@@ -72,9 +74,8 @@ class DoctorRegistration extends Component {
                     value={this.state.lastName}
                     name='lastName'
                     onChange={(e) => this.handleInput(e)}
-                    />
+                    />  
 
-                {/* <Link to='/patients'><button>Register</button></Link> */}
                 <button onClick={this.handleDoctorRegistration}>Register</button>
 
                 <Link to='/login'><button>Sign In</button></Link>
