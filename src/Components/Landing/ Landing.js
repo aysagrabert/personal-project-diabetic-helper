@@ -1,9 +1,10 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+
+//redux
 // import {connect} from 'react-redux';
 // import {updateUser} from '../redux/reducer';
-
 
 
 class Landing extends Component {
@@ -23,6 +24,7 @@ class Landing extends Component {
                 username: '',
                 password: ''
             }
+            //redux
             // this.props.updateUser(res.data)
             this.props.history.push('/dashboard/tracker')
      
@@ -66,5 +68,7 @@ class Landing extends Component {
         )
     }
 }
+
+//redux
 
 export default Landing;
